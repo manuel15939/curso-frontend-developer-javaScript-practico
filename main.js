@@ -1,9 +1,15 @@
 const menuEmail = document.querySelector('.navbar-email');
 const desktopMenu = document.querySelector('.desktop-menu');
+const hambuMenu = document.querySelector('.menu');
+const mobileMenu = document.querySelector('.mobile-menu');
 
-menuEmail.addEventListener('click', togglemenu);
+menuEmail.addEventListener('click', toggledesktopmenu);
+hambuMenu.addEventListener('click', togglemobilemenu)
 
-function togglemenu(){
+function toggledesktopmenu(){
     desktopMenu.classList.toggle('inactive')
 }
-console.log('js funcionando');
+
+function togglemobilemenu(){
+    mobileMenu.classList.toggle('inactive')
+}
