@@ -4,6 +4,7 @@ const hambuMenu = document.querySelector('.menu');
 const mobileMenu = document.querySelector('.mobile-menu');
 const aside = document.querySelector('.product-detail');
 const menuShoppingCar = document.querySelector('.navbar-shopping-cart')
+const cardsContainer = document.querySelector('.cards-container')
 
 menuEmail.addEventListener('click', toggledesktopmenu);
 hambuMenu.addEventListener('click', togglemobilemenu);
@@ -61,17 +62,37 @@ productList.push({
     image: 'https://images.pexels.com/photos/159394/pc-computer-android-android-pc-159394.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
 });
 
-for(product of productList){
+function renderproducts(arr){
+    for(product of arr){
     const productCard = document.createElement('div');
     productCard.classList.add('product-card');
 
-    const img = document.createElement('img');
-    img.setAttribute('src', product.image);
+    const productImg = document.createElement('img');
+    productImg.setAttribute('src', product.image);
 
     const productInfo = document.createElement('div');
     productInfo.classList.add('product-info');
 
+    const productInfoDiv = document.createElement('div');
+
     const productPrice = document.createElement('p');
+    productPrice.innerText = '$' + product.Price;
+
     const productName = document.createElement('Price');
+    productName.innerText = product.name;
+
+    const productInfoFigure = document.createElement('figure');
+    
+    const productImgCar = document.createElement('img')
+    productImgCar.setAttribute('src','./icons/bt_add_to_cart.svg' )
+
+    cardsContainer.append(productCard);
+    productCard.append(productImg, productInfo);
+    productInfo.append(productInfoDiv,productInfoFigure);
+    productInfoDiv.append(productPrice,productName);
+    productInfoFigure.append(productImgCar);
     
 }
+}
+
+renderproducts(productList);
