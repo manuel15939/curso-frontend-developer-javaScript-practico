@@ -361,6 +361,11 @@
       width: 140px;
       height: 140px;
     }
+
+    #shoppingCarContainer{
+      width: 100%;
+    }
+
   }
 
   @media (max-width: 640px) {
